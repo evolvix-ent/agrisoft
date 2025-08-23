@@ -5,8 +5,8 @@ class AuthConfig {
   // =====================================================
   
   /// URL base de la aplicación en producción
-  /// Configurado para Vercel - CAMBIAR por tu URL real después del deploy
-  static const String productionBaseUrl = 'https://tu-app.vercel.app';
+  /// Configurado para Firebase - CAMBIAR por tu URL real después del deploy
+  static const String productionBaseUrl = 'https://tu-proyecto.web.app';
 
   /// URL base para desarrollo local
   static const String developmentBaseUrl = 'http://localhost:3000';
@@ -54,10 +54,10 @@ class AuthConfig {
     'https://tu-app.vercel.app/auth/callback',
     'https://tu-app.vercel.app/auth/reset-password',
 
-    // URLs para Firebase Hosting (alternativa)
-    'https://tu-proyecto.web.app/auth/confirm',
-    'https://tu-proyecto.web.app/auth/callback',
-    'https://tu-proyecto.web.app/auth/reset-password',
+    // URLs para Firebase Hosting - ACTUALIZAR con tu URL real
+    'https://tu-proyecto-real.web.app/auth/confirm',
+    'https://tu-proyecto-real.web.app/auth/callback',
+    'https://tu-proyecto-real.web.app/auth/reset-password',
 
     // URLs para Surge.sh (alternativa)
     'https://tu-app.surge.sh/auth/confirm',

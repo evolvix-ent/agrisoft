@@ -1,8 +1,4 @@
 {
-  "buildCommand": "curl -fsSL https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.32.5-stable.tar.xz | tar -xJ && export PATH=\"$PWD/flutter/bin:$PATH\" && flutter config --enable-web && flutter pub get && flutter build web --release",
-  "outputDirectory": "build/web",
-  "installCommand": "echo 'Flutter será instalado en buildCommand'",
-  "framework": null,
   "rewrites": [
     {
       "source": "/(.*)",
