@@ -1,0 +1,38 @@
+[build]
+  # Comando para construir la aplicación usando el script personalizado
+  command = "./scripts/netlify_build.sh"
+
+  # Directorio donde se encuentran los archivos construidos
+  publish = "build/web"
+
+[build.environment]
+  # Variables de entorno para Flutter
+  FLUTTER_VERSION = "3.32.5"
+  PATH = "/opt/buildhome/.flutter/bin:$PATH"
+
+# Configuración para redirecciones SPA (Single Page Application)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers de seguridad
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Headers para archivos estáticos con cache
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Headers para service worker
+[[headers]]
+  for = "/flutter_service_worker.js"
+  [headers.values]
+    Cache-Control = "no-cache"

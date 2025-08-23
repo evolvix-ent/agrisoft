@@ -5,8 +5,8 @@ class AuthConfig {
   // =====================================================
   
   /// URL base de la aplicación en producción
-  /// Configurado para GitHub Pages de Evolvix Enterprise
-  static const String productionBaseUrl = 'https://evolvix-ent.github.io/agrisoft';
+  /// Configurado para Netlify
+  static const String productionBaseUrl = 'https://agrosoftapp.netlify.app';
 
   /// URL base para desarrollo local
   static const String developmentBaseUrl = 'http://localhost:3000';
@@ -34,16 +34,6 @@ class AuthConfig {
   /// Estas URLs deben configurarse en:
   /// Supabase Dashboard > Authentication > URL Configuration
   static const List<String> allowedRedirectUrls = [
-    // URLs de producción (GitHub Pages - Evolvix Enterprise)
-    'https://evolvix-ent.github.io/agrisoft/auth/confirm',
-    'https://evolvix-ent.github.io/agrisoft/auth/callback',
-    'https://evolvix-ent.github.io/agrisoft/auth/reset-password',
-
-    // URLs de producción (dominio personalizado - Evolvix Enterprise)
-    'https://agrisoft.evolvix-ent.com/auth/confirm',
-    'https://agrisoft.evolvix-ent.com/auth/callback',
-    'https://agrisoft.evolvix-ent.com/auth/reset-password',
-
     // URLs de desarrollo (mantener para testing)
     'http://localhost:3000/auth/confirm',
     'http://localhost:3000/auth/callback',
@@ -53,6 +43,31 @@ class AuthConfig {
     'http://localhost:8080/auth/confirm',
     'http://localhost:8080/auth/callback',
     'http://localhost:8080/auth/reset-password',
+
+    // URLs para Netlify
+    'https://agrosoftapp.netlify.app/auth/confirm',
+    'https://agrosoftapp.netlify.app/auth/callback',
+    'https://agrosoftapp.netlify.app/auth/reset-password',
+
+    // URLs para Vercel (alternativa)
+    'https://tu-app.vercel.app/auth/confirm',
+    'https://tu-app.vercel.app/auth/callback',
+    'https://tu-app.vercel.app/auth/reset-password',
+
+    // URLs para Firebase Hosting (alternativa)
+    'https://tu-proyecto.web.app/auth/confirm',
+    'https://tu-proyecto.web.app/auth/callback',
+    'https://tu-proyecto.web.app/auth/reset-password',
+
+    // URLs para Surge.sh (alternativa)
+    'https://tu-app.surge.sh/auth/confirm',
+    'https://tu-app.surge.sh/auth/callback',
+    'https://tu-app.surge.sh/auth/reset-password',
+
+    // URLs para GitHub Pages (si tienes repo público)
+    'https://tu-usuario.github.io/agrisoft/auth/confirm',
+    'https://tu-usuario.github.io/agrisoft/auth/callback',
+    'https://tu-usuario.github.io/agrisoft/auth/reset-password',
   ];
   
   // =====================================================

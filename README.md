@@ -44,6 +44,15 @@
 3. Abre `lib/src/core/constants.dart` y reemplaza:
    - `TU_SUPABASE_URL_AQUI` con tu Project URL
    - `TU_SUPABASE_ANON_KEY_AQUI` con tu Anon key
+
+### 3. Configurar Verificación de Email
+
+1. **Usar el script automático**:
+   ```bash
+   ./scripts/setup_email_verification.sh
+   ```
+
+2. **O seguir la guía manual**: [EMAIL_VERIFICATION_SETUP.md](EMAIL_VERIFICATION_SETUP.md)
 ### 3. Generar Código
 
 Ejecuta los siguientes comandos para generar el código necesario:
@@ -71,11 +80,41 @@ flutter run --release
 
 ## 🚀 Despliegue a Producción
 
-### Despliegue Automático con GitHub Pages
+### 🆓 Opción 1: Netlify (Recomendado - Completamente Gratuito)
+
+1. **Crear cuenta en Netlify**:
+   - Ve a [netlify.com](https://netlify.com) y regístrate gratis
+   - Conecta tu cuenta de GitHub
+
+2. **Desplegar automáticamente**:
+   - Click en "New site from Git"
+   - Selecciona tu repositorio
+   - Build command: `flutter build web --release`
+   - Publish directory: `build/web`
+   - ¡Deploy automático en cada push!
+
+3. **Tu app estará disponible en**: `https://tu-app.netlify.app`
+
+### 🔥 Opción 2: Firebase Hosting (Gratuito)
+
+1. **Instalar Firebase CLI**:
+   ```bash
+   npm install -g firebase-tools
+   firebase login
+   firebase init hosting
+   ```
+
+2. **Configurar y desplegar**:
+   ```bash
+   flutter build web --release
+   firebase deploy
+   ```
+
+### 📄 Opción 3: GitHub Pages (Requiere repo público o GitHub Pro)
 
 1. **Configurar repositorio**:
    ```bash
-   git remote add origin https://github.com/evolvix-ent/agrisoft.git
+   git remote add origin https://github.com/tu-usuario/agrisoft.git
    git push -u origin main
    ```
 
@@ -87,6 +126,40 @@ flutter run --release
 3. **Configurar URLs**:
    - Actualiza `productionBaseUrl` en `lib/src/core/config/auth_config.dart`
    - Configura las URLs en Supabase Dashboard
+
+### ⚡ Opción 4: Surge.sh (Súper Simple y Gratuito)
+
+1. **Usar el script incluido**:
+   ```bash
+   # Hacer ejecutable (solo la primera vez)
+   chmod +x scripts/deploy_surge.sh
+
+   # Desplegar
+   ./scripts/deploy_surge.sh
+   ```
+
+2. **O manualmente**:
+   ```bash
+   # Instalar Surge
+   npm install -g surge
+
+   # Construir y desplegar
+   flutter build web --release
+   cd build/web
+   surge . tu-app.surge.sh
+   ```
+
+## 📊 Comparación de Plataformas
+
+| Plataforma | Costo | Facilidad | Dominio Personalizado | CI/CD |
+|------------|-------|-----------|----------------------|-------|
+| **Netlify** | 🆓 Gratis | ⭐⭐⭐⭐⭐ | ✅ Sí | ✅ Automático |
+| **Firebase** | 🆓 Gratis | ⭐⭐⭐⭐ | ✅ Sí | ⭐⭐⭐ Manual |
+| **Vercel** | 🆓 Gratis | ⭐⭐⭐⭐⭐ | ✅ Sí | ✅ Automático |
+| **Surge.sh** | 🆓 Gratis | ⭐⭐⭐⭐⭐ | ✅ Sí | ⭐⭐ Manual |
+| **GitHub Pages** | 💰 Pago* | ⭐⭐⭐ | ✅ Sí | ✅ Automático |
+
+*Gratis solo para repositorios públicos
 
 ### Build Manual
 
