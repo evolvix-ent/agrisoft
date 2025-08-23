@@ -5,8 +5,8 @@ class AuthConfig {
   // =====================================================
   
   /// URL base de la aplicación en producción
-  /// Configurado para Netlify
-  static const String productionBaseUrl = 'https://agrosoftapp.netlify.app';
+  /// Configurado para Vercel - CAMBIAR por tu URL real después del deploy
+  static const String productionBaseUrl = 'https://tu-app.vercel.app';
 
   /// URL base para desarrollo local
   static const String developmentBaseUrl = 'http://localhost:3000';
