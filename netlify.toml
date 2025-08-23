@@ -1,14 +1,17 @@
+# Usar plugin de Flutter para Netlify
+[[plugins]]
+  package = "netlify-plugin-flutter-web"
+
 [build]
-  # Comando para construir la aplicación usando el script personalizado
-  command = "./scripts/netlify_build.sh"
+  # Comando de build usando el plugin
+  command = "flutter build web --release"
 
   # Directorio donde se encuentran los archivos construidos
   publish = "build/web"
 
 [build.environment]
-  # Variables de entorno para Flutter
+  # Variables de entorno
   FLUTTER_VERSION = "3.32.5"
-  PATH = "/opt/buildhome/.flutter/bin:$PATH"
 
 # Configuración para redirecciones SPA (Single Page Application)
 [[redirects]]
