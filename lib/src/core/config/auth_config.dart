@@ -54,10 +54,10 @@ class AuthConfig {
     'https://tu-app.vercel.app/auth/callback',
     'https://tu-app.vercel.app/auth/reset-password',
 
-    // URLs para Firebase Hosting - ACTUALIZAR con tu URL real
-    'https://tu-proyecto-real.web.app/auth/confirm',
-    'https://tu-proyecto-real.web.app/auth/callback',
-    'https://tu-proyecto-real.web.app/auth/reset-password',
+    // URLs para Firebase Hosting
+    'https://agrosoft-f7232.web.app/auth/confirm',
+    'https://agrosoft-f7232.web.app/auth/callback',
+    'https://agrosoft-f7232.web.app/auth/reset-password',
 
     // URLs para Surge.sh (alternativa)
     'https://tu-app.surge.sh/auth/confirm',
