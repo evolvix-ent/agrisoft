@@ -6,7 +6,7 @@ class AuthConfig {
   
   /// URL base de la aplicación en producción
   /// Configurado para Firebase - CAMBIAR por tu URL real después del deploy
-  static const String productionBaseUrl = 'https://tu-proyecto.web.app';
+  static const String productionBaseUrl = 'https://agrosoft-f7232.web.app';
 
   /// URL base para desarrollo local
   static const String developmentBaseUrl = 'http://localhost:3000';
